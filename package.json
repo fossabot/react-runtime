@@ -1,0 +1,56 @@
+{
+  "name": "@vzhdi/react-runtime",
+  "version": "1.0.0",
+  "description": "Runtime lib for React App. I18n,Router,Redux,and so on",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "typings": "lib/index.d.ts",
+  "scripts": {
+    "eslint": "eslint src --ext .js",
+    "build": "npm run eslint && npm run build-lib && npm run build-es",
+    "build-lib": "rimraf lib && cross-env OX_ENV=build-lib ox babel ./src ./lib",
+    "build-es": "rimraf es && cross-env OX_ENV=build-es ox babel ./src ./es",
+    "npm-publish": "npm run build && npm publish --registry https://registry.npmjs.org --access public",
+    "test:start": "ox start",
+    "test:build": "ox build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vzhdi/react-runtime.git"
+  },
+  "author": "vzhdi@qq.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vzhdi/react-runtime/issues"
+  },
+  "homepage": "https://github.com/vzhdi/react-runtime#readme",
+  "engines": {
+    "node": ">= 10.6.0"
+  },
+  "dependencies": {
+    "prop-types": "^15.6.2",
+    "react-hot-loader": "^4.3.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0-beta.54",
+    "@vzhdi/ox": "^1.1.3",
+    "@vzhdi/ox-react": "^1.0.1",
+    "@vzhdi/ox-plugin-babel-import": "^1.0.0",
+    "babel-eslint": "^9.0.0-beta.3",
+    "cross-env": "^5.2.0",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-plugin-babel": "^5.1.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.10.0",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "rimraf": "^2.6.2",
+    "webpack": "^4.16.1"
+  },
+  "peerDependencies": {
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1"
+  }
+}

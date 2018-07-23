@@ -1,0 +1,9 @@
+/node_modules/
+/*.lock
+/*.log
+/*.*rc
+/*.*ignore
+/jsconfig.json
+/.oxrc.js
+/src/
+/test/
