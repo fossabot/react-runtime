@@ -1,4 +1,4 @@
 import { hot } from '@vzhdi/react-runtime';
-import IndexPage from './pages';
+import IndexPage from './routes';
 
 export default hot(module)(IndexPage);
