@@ -33,9 +33,9 @@
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.54",
-    "@vzhdi/ox": "^1.1.3",
-    "@vzhdi/ox-react": "^1.0.1",
+    "@vzhdi/ox": "^1.1.5",
     "@vzhdi/ox-plugin-babel-import": "^1.0.0",
+    "@vzhdi/ox-react": "^1.0.1",
     "babel-eslint": "^9.0.0-beta.3",
     "cross-env": "^5.2.0",
     "eslint": "^4.19.1",
