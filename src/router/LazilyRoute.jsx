@@ -2,29 +2,33 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import loadable from '../loadable';
 import Route from './Route';
+import RouteLoading from './components/RouteLoading';
 
 class LazilyRoute extends React.Component {
   static propTypes = {
     loader: PropTypes.func.isRequired,
     render: PropTypes.func,
+    loading: PropTypes.func,
   };
 
   static defaultProps = {
     render: null,
+    loading: null,
   };
 
   constructor(...args) {
     super(...args);
-    const { loader, render } = this.props;
-    this.LoadableComp = loadable({
-      loader,
-      loading: null,
-      render:
-        render ||
-        ((loaded, props) => {
-          const TargetComp = loaded.default;
-          return <TargetComp {...props} />;
-        }),
+    const { loader, render, loading: CustomLoading } = this.props;
+    this.LoadableComp = loadable(loader, {
+      loading: CustomLoading
+        ? p => (
+            <>
+              <CustomLoading {...p} />
+              <RouteLoading {...p} />
+            </>
+          )
+        : RouteLoading,
+      render,
     });
   }
 
@@ -34,7 +38,7 @@ class LazilyRoute extends React.Component {
   };
 
   render() {
-    const { loader, render, ...props } = this.props;
+    const { loader, render, loading, ...props } = this.props;
     return <Route {...props} render={this.rendeComp} />;
   }
 }

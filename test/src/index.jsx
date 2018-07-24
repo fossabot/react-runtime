@@ -1,6 +1,5 @@
 import './polyfill';
-import React from 'react';
-import ReactDom from 'react-dom';
+import { render, hot } from '@vzhdi/react-runtime';
 import App from './app';
 
-ReactDom.render(<App />, document.getElementById('root'));
+render(hot(module)(App), 'root');

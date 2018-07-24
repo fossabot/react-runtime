@@ -30,9 +30,10 @@
   "dependencies": {
     "history": "^4.7.2",
     "invariant": "^2.2.4",
+    "nprogress": "^0.2.0",
     "prop-types": "^15.6.2",
     "react-hot-loader": "^4.3.3",
-    "react-loadable": "^5.4.0",
+    "react-imported-component": "^4.6.2",
     "react-router": "^4.3.1"
   },
   "devDependencies": {
